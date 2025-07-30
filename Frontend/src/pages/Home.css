@@ -1,0 +1,90 @@
+.home-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 20px;
+  background-image: linear-gradient(to top, black, #030353);
+  overflow: hidden;
+}
+
+.logout-button {
+  min-width: 150px;
+  height: 60px;
+  margin-top: 30px;
+  background-color: #ff4d4d;
+  color: white;
+  font-size: 19px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-weight: 600;
+  border-radius: 9999px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+  
+  /* Hidden on small screens */
+  display: none;
+}
+
+.home-customize-button {
+  display: none;
+  min-width: 150px;
+  height: 60px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  color: black;
+  font-size: 19px;
+  position: absolute;
+  top: 130px; /* moved below the logout button */
+  right: 20px;
+  font-weight: 600;
+  border-radius: 9999px;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #cc0000;
+}
+
+.home-customize-button:hover {
+  background-color: #e6e6e6;
+}
+
+@media (min-width: 1024px) {
+  .logout-button,
+  .home-customize-button {
+    display: block;
+  }
+}
+
+.home-image-wrapper {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.home-image {
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-title {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}

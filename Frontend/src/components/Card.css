@@ -1,0 +1,33 @@
+.card-container {
+  width: 70px;
+  height: 140px;
+  background-color: #030326;
+  border: 2px solid #0000ff66;
+  border-radius: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+@media (min-width: 1024px) {
+  .card-container {
+    width: 150px;
+    height: 250px;
+  }
+}
+
+.card-container:hover {
+  box-shadow: 0 0 20px #1e3a8a; /* Tailwind's shadow-blue-950 approximation */
+  border: 4px solid white;
+}
+
+.card-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.selected-card {
+  border: 4px solid white;
+  box-shadow: 0 10px 25px rgba(30, 58, 138, 0.8); /* same as hover */
+}

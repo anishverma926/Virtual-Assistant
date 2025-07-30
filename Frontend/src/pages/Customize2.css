@@ -1,0 +1,49 @@
+.customize-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    background-image: linear-gradient(to top, black, #030353);
+}
+
+.customize-title {
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.input {
+  width: 100%;
+  max-width: 600px;
+  height: 60px;
+  padding: 0 16px;
+  outline: none;
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  border-radius: 9999px; /* equivalent to Tailwind's rounded-full */
+  font-size: 18px; /* equivalent to text-[18px] */
+}
+
+.input::placeholder {
+  color: #d1d5db; /* Tailwind's gray-300 */
+}
+
+.customize2-button {
+    min-width: 300px;
+    height: 60px;
+    margin-top: 30px;
+    background-color: white;
+    color: black;
+    font-size: 19px;
+    font-weight: 600;
+    border-radius: 9999px;
+    /* rounded-full */
+    cursor: pointer;
+    border: none;
+}
