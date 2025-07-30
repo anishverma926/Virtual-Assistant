@@ -6,6 +6,8 @@ import cookieParser from "cookie-parser";
 import cors from "cors"
 import userRouter from "./routes/user.routes.js";
 import geminiResponse from "./gemini.js";
+import geminiRouter from "./routes/gemini.routes.js";
+
 
 dotenv.config()
 
@@ -22,6 +24,8 @@ app.use(cookieParser())
 
 app.use("/api/auth", authRouter)
 app.use("/api/user", userRouter)
+app.use("/api/gemini", geminiRouter);
+
 
 app.get("/", async (req, res)=> {
     let prompt = req.query.prompt
