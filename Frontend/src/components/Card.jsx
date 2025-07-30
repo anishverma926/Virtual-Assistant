@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import './Card.css';
-import { userDataContext } from '../context/userContext';
+import { userDataContext } from '../context/UserContext';
 
 const Card = ({ image }) => {
   const {serverUrl,
