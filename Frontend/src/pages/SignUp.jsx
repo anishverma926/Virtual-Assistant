@@ -36,7 +36,13 @@ const SignUp = () => {
       console.log(error);
       setUserData(null)
       setLoading(false)
-      setErr(error.response.data.message)
+      const message =
+        error?.response?.data?.message ||
+        error?.message ||
+        "Registration failed. Please try again.";
+
+      setErr(message);
+
     }
   }
 
@@ -89,7 +95,7 @@ const SignUp = () => {
         )}
 
         <button className="signup-button"
-        disabled={loading}>
+          disabled={loading}>
           {loading ? "Loading..." : "Sign Up"}
         </button>
         <p className="login-text">
