@@ -5,7 +5,7 @@ export const userDataContext = createContext();
 
 function UserContext({ children }) {
   // const serverUrl = "https://virtual-assistant-backend-pgqz.onrender.com";
-    const serverUrl = "https://virtual-assistant-backend-pgqz.onrender.com";
+    const serverUrl = "http://localhost:8000";
 
   const [userData, setUserData] = useState(null);
   const [frontedImage, setFrontendImage] = useState(null)
