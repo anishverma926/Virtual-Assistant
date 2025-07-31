@@ -16,7 +16,7 @@ const port = process.env.PORT || 8000;
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://virtual-assistant-frontend-v9dw.onrender.com"  // ✅ Your frontend domain
+    "https://virtual-assistant-frontend-5j0y.onrender.com"  // ✅ Your frontend domain
   ],
   credentials: true
 }));
