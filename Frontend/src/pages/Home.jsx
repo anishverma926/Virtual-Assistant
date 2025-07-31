@@ -20,7 +20,7 @@ const Home = () => {
   const [ham, setHam] = useState(false)
   const recognitionRef = useRef(null);
   const synth = window.speechSynthesis;
-  const isRecognizingRef = useState(false);
+  const isRecognizingRef = useRef(false);
 
   const handleLogOut = async () => {
     try {
@@ -37,10 +37,10 @@ const Home = () => {
     if (!isSpeakingRef.current && !isRecognizingRef.current) {
       try {
         recognitionRef.current?.start();
-        setListening(true);
+        // setListening(true);
       } catch (error) {
-        if (!error.message.includes("start")) {
-          console.error("Recognition error:", error);
+        if (!error.name !== "InvalidStateError") {
+          console.error("start error:", error);
         }
       }
     }
