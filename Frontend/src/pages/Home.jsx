@@ -78,6 +78,8 @@ const Home = () => {
     const { type, userInput, response } = data;
     speak(response);
 
+    
+
     if (type === 'google-search') {
       const query = encodeURIComponent(userInput);
       window.open(`https://www.google.com/search?q=${query}`, '_blank');
@@ -222,7 +224,8 @@ const Home = () => {
       }
     };
 
-    const greeting = new SpeechSynthesisUtterance(`Hello ${userData.name}, what can I help you?`);
+    const greeting = new SpeechSynthesisUtterance(`Hello ${userData.name}, what can I help you? 
+      if you want to ask any question to me, please say my name with your query`);
     greeting.lang = 'hi-IN';
     // greeting.onend = () => {
     //   startTimeout(); // start listening after speech

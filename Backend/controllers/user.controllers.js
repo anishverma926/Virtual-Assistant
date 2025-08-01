@@ -3,8 +3,9 @@ import uploadOnCloudinary from "../config/cloudinary.js";
 import geminiResponse from "../gemini.js";
 import User from "../models/user.model.js";
 import fs from 'fs';
-import moment from "moment";
+// import moment from "moment";
 import { userInfo } from "os";
+import moment from 'moment-timezone';
 
 export const getCurrentUser = async (req, res) => {
   try {
@@ -65,7 +66,7 @@ export const askToAssistant = async (req, res) => {
     const user = await User.findById(req.userId);
     user.history.push(command)
     user.save();
-    
+
     const userName = user.name
     const assistantName = user.assistantName
     const result = await geminiResponse(command, assistantName, userName)
@@ -84,26 +85,34 @@ export const askToAssistant = async (req, res) => {
         return res.json({
           type,
           userInput: gemResult.userInput,
-          response: `current date is ${moment().format('YYYY-MM-DD')}`
+          response: `Current date in India is ${moment().tz('Asia/Kolkata').format('YYYY-MM-DD')}`
         });
+
       case 'get-time':
+        const istTime = moment().tz('Asia/Kolkata').format('hh:mm A');
         return res.json({
-          type,
+          type: 'get-time',
           userInput: gemResult.userInput,
-          response: `current time is ${moment().format('hh:mm A')}`
+          response: `Current time in India is ${istTime}` // this will override Gemini’s response
         });
+
+
       case 'get-day':
         return res.json({
           type,
           userInput: gemResult.userInput,
-          response: `today is ${moment().format('dddd')}`
+          response: `Today is ${moment().tz('Asia/Kolkata').format('dddd')}`
         });
+
       case 'get-month':
         return res.json({
           type,
           userInput: gemResult.userInput,
-          response: `current month is ${moment().format('MMMM')}`
+          response: `Current month is ${moment().tz('Asia/Kolkata').format('MMMM')}`
         });
+
+      // ... no change to the rest
+
 
       case 'google-search':
       case 'youtube-search':
