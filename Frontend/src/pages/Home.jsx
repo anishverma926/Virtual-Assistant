@@ -78,7 +78,7 @@ const Home = () => {
     const { type, userInput, response } = data;
     speak(response);
 
-    
+
 
     if (type === 'google-search') {
       const query = encodeURIComponent(userInput);
@@ -224,8 +224,8 @@ const Home = () => {
       }
     };
 
-    const greeting = new SpeechSynthesisUtterance(`Hello ${userData.name}, what can I help you? 
-      if you want to ask any question to me, please say my name with your query`);
+    const greeting = new SpeechSynthesisUtterance(`Hello ${userData.name}, what can I help you?`);
+    // if you want to ask any question to me, please say my name with your query
     greeting.lang = 'hi-IN';
     // greeting.onend = () => {
     //   startTimeout(); // start listening after speech
@@ -280,6 +280,10 @@ const Home = () => {
         <img src={userData?.assistantImage} alt="" className='home-image' />
       </div>
       <h1 className='home-title'>I'm {userData.assistantName}</h1>
+      <h2 className='text-white font-semibold mt-'>
+        Start your query with my name, like : "{userData.assistantName}, what's the time?"
+      </h2>
+
       {!aiText && <img src={userImg}
         alt='' className='w-[200px]' />}
       {aiText && <img src={aiImg}
