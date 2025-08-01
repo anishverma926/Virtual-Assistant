@@ -58,7 +58,8 @@ const Customize2 = () => {
             </h1>
             <input
                 type="text"
-                placeholder="eg: Jarvis"
+                placeholder="e.g., Jarvis, Friday, or your own name"
+
                 className="input"
                 required
                 onChange={(e) => setAssistantName(e.target.value)} value={assistantName}
