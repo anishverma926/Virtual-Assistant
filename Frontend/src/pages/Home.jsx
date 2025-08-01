@@ -253,7 +253,7 @@ const Home = () => {
             absolute top-[20px] right-[20px] w-[25px] h-[25px]'
           onClick={() => setHam(false)} />
         <button className='min-w-[150px] h-[60px] text-black font-semibold bg-white rounded-full cursor-pointer 
-          text-[19px] px-[20px] py-[10px]' onClick={handleLogOut}>
+          text-[19px] px-[20px] py-[10px] ' onClick={handleLogOut}>
           Log Out
         </button>
         <button className='min-w-[150px] h-[60px] text-black font-semibold bg-white rounded-full cursor-pointer 
@@ -279,7 +279,10 @@ const Home = () => {
       <div className='home-image-wrapper'>
         <img src={userData?.assistantImage} alt="" className='home-image' />
       </div>
-      <h1 className='home-title'>I'm {userData.assistantName}</h1>
+      
+      {/* I am friday created by Anish verma */}
+      <h1 className='home-title'>I'm {userData?.assistantName || 'Friday'}, created by <span className="text-yellow-400 font-bold">Anish Verma</span></h1>
+
       <h2 className='text-white font-semibold mt-'>
         Start your query with my name, like : "{userData.assistantName}, what's the time?"
       </h2>
